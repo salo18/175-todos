@@ -35,6 +35,11 @@ helpers do
     incomplete_todos.each {|todo| yield todo, todos.index(todo)}
     complete_todos.each {|todo| yield todo, todos.index(todo)}
   end
+
+  def no_lists?(arr)
+    return true if arr.empty?
+    false
+  end
 end
 
 before do

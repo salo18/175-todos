@@ -9,11 +9,16 @@
   </head>
   <body>
     <header>
-      <h1>Todo Tracker</h1>
+      <h1>Salo Todo Tracker</h1>
+
       <div class="actions">
         <%= yield_content :header_links %>
       </div>
     </header>
+
+    <% if no_lists?(session[:lists]) %>
+      <p>To get started, click the "New List" button and add a new todo list.</p>
+    <% end %>
 
     <% if session[:success] %>
       <div class="flash success">
